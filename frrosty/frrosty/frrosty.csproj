@@ -1,0 +1,78 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+	<MonoGamePlatform>BlazorGL</MonoGamePlatform>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <BlazorEnableTimeZoneSupport>false</BlazorEnableTimeZoneSupport>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>$(DefineConstants);TRACE;BLAZORGL</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>$(DefineConstants);TRACE;BLAZORGL</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Pages\Index.razor.cs" />
+    <Compile Include="PD1\GameObjects\Avatar\AvatarObject.cs" />
+    <Compile Include="PD1\GameObjects\Avatar\AvatarParts\HeadObject.cs" />
+    <Compile Include="PD1\GameObjects\Avatar\AvatarParts\SnowballObject.cs" />
+    <Compile Include="PD1\GameObjects\Avatar\AvatarParts\TopHatObject.cs" />
+    <Compile Include="PD1\GameObjects\GameObject.cs" />
+    <Compile Include="PD1\GameObjects\LevelObjects\Bullet.cs" />
+    <Compile Include="PD1\GameObjects\LevelObjects\Level.cs" />
+    <Compile Include="PD1\GameObjects\LevelObjects\LevelParts\BirdObject.cs" />
+    <Compile Include="PD1\GameObjects\LevelObjects\LevelParts\CoinObject.cs" />
+    <Compile Include="PD1\GameObjects\LevelObjects\LevelParts\FlagObject.cs" />
+    <Compile Include="PD1\GameObjects\LevelObjects\LevelParts\IceBlockObject.cs" />
+    <Compile Include="PD1\GameObjects\LevelObjects\LevelParts\LavaObject.cs" />
+    <Compile Include="PD1\GameObjects\LevelObjects\LevelParts\SoulSphere.cs" />
+    <Compile Include="PD1\GameObjects\LevelObjects\LevelParts\SpikesObject.cs" />
+    <Compile Include="PD1\GameObjects\LevelObjects\PlatForm.cs" />
+    <Compile Include="PD1\GameObjects\LevelObjects\Terain.cs" />
+    <Compile Include="PD1\GameObjects\LevelObjects\VerticalSliceOFTerain.cs" />
+    <Compile Include="PD1\General\Data.cs" />
+    <Compile Include="PD1\General\Factory.cs" />
+    <Compile Include="PD1\General\GameSettings.cs" />
+    <Compile Include="PD1\General\Logic.cs" />
+    <Compile Include="PD1\General\PlayerScore.cs" />
+    <Compile Include="PD1\General\UserInput.cs" />
+    <Compile Include="PD1\hud\Button.cs" />
+    <Compile Include="PD1\hud\ControlBase.cs" />
+    <Compile Include="PD1\hud\SimplifiedTextBox.cs" />
+    <Compile Include="PD1\hud\TextControl.cs" />
+    <Compile Include="PD1\Screens\EndScreen.cs" />
+    <Compile Include="PD1\Screens\LevelPlayScreen.cs" />
+    <Compile Include="PD1\Screens\PlatformPlayScreen.cs" />
+    <Compile Include="PD1\Screens\PlayScreen.cs" />
+    <Compile Include="PD1\Screens\Screen.cs" />
+    <Compile Include="PD1\Screens\StartScreen.cs" />
+    <Compile Include="PD1\sprite\Sprite.cs" />
+    <Compile Include="PD1\sprite\SpriteAnimation.cs" />
+    <Compile Include="PD1\sprite\SpriteSheet.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="frrostyGame.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageReference Include="nkast.Xna.Framework" Version="3.9.9001" />
+    <PackageReference Include="nkast.Xna.Framework.Blazor" Version="3.9.9001" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.11" PrivateAssets="all" />
+  </ItemGroup>
+<ItemGroup>
+</ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="Content\frrostyContent.mgcb" />
+  </ItemGroup>
+</Project>
